@@ -1,0 +1,34 @@
+{
+  "name": "Finance",
+  "version": "4.0.0",
+  "domainBlocks": {
+    "boundary": [
+      {
+        "label": "Budget",
+        "properties": [{ "name": "amount", "type": "float" }]
+      }
+    ],
+    "operators": [
+      {
+        "label": "Risk Factor",
+        "properties": [
+          { "name": "threshold", "type": "int" },
+          { "name": "risk_model", "type": "string" }
+        ],
+        "constraints": [
+          { "propertyName": "threshold", "constraint": "required" },
+          { "propertyName": "threshold", "constraint": "min", "value": "0" },
+          { "propertyName": "threshold", "constraint": "max", "value": "1000" },
+          { "propertyName": "risk_model", "constraint": "required" }
+        ]
+      },
+      {
+        "label": "Optimize Portfolio",
+        "properties": [{ "name": "optimizer", "type": "string" }],
+        "constraints": [
+          { "propertyName": "optimizer", "constraint": "allowed_values", "value": "COBYLA,SPSA,ADAM" }
+        ]
+      }
+    ]
+  }
+}

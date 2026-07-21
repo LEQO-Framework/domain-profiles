@@ -15,11 +15,12 @@ index.json          # manifest listing all domains and their available versions
 
 ## Domain
 
-Currently a single domain, **Finance**, evolved across five revisions
-(`1.0.0` → `5.0.0`) rather than spread across many unrelated domains — each
+Currently a single domain, **Finance**, evolved across eight revisions
+(`1.0.0` → `8.0.0`) rather than spread across many unrelated domains — each
 transition targets a different part of the conflict taxonomy (block removal,
 type narrowing/widening, required/optional properties, `min`/`max`
-constraints, constraint value changes and removals). See
+constraints, constraint value changes and removals, block renames, custom
+types). See
 [`leqo-evolution-use-cases`](https://github.com/stceri/leqo-evolution-use-cases)
 for the corresponding models and the exact conflicts each transition
 produces, including detection-engine gaps found along the way.

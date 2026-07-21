@@ -1,0 +1,29 @@
+{
+  "name": "Logistics",
+  "version": "2.0.0",
+  "domainBlocks": {
+    "boundary": [
+      {
+        "label": "Shipment",
+        "properties": [
+          { "name": "weight", "type": "int" },
+          { "name": "carrier", "type": "string" }
+        ]
+      }
+    ],
+    "operators": [
+      {
+        "label": "Load Balancer",
+        "properties": [{ "name": "capacity", "type": "int" }],
+        "constraints": [
+          { "propertyName": "capacity", "constraint": "required" },
+          { "propertyName": "capacity", "constraint": "min", "value": "1" }
+        ]
+      },
+      {
+        "label": "Optimize Route",
+        "properties": [{ "name": "algorithm", "type": "string" }]
+      }
+    ]
+  }
+}

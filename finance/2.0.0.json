@@ -1,0 +1,29 @@
+{
+  "name": "Finance",
+  "version": "2.0.0",
+  "domainBlocks": {
+    "boundary": [
+      {
+        "label": "Budget",
+        "properties": [
+          { "name": "amount", "type": "int" },
+          { "name": "note", "type": "string" }
+        ]
+      }
+    ],
+    "operators": [
+      {
+        "label": "Risk Factor",
+        "properties": [{ "name": "threshold", "type": "int" }],
+        "constraints": [
+          { "propertyName": "threshold", "constraint": "required" },
+          { "propertyName": "threshold", "constraint": "min", "value": "0" }
+        ]
+      },
+      {
+        "label": "Optimize Portfolio",
+        "properties": [{ "name": "optimizer", "type": "string" }]
+      }
+    ]
+  }
+}

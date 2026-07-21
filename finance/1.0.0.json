@@ -1,0 +1,23 @@
+{
+  "name": "Finance",
+  "version": "1.0.0",
+  "domainBlocks": {
+    "boundary": [
+      {
+        "label": "Budget",
+        "properties": [{ "name": "amount", "type": "float" }]
+      },
+      {
+        "label": "Market Data",
+        "properties": [{ "name": "source", "type": "string" }]
+      }
+    ],
+    "operators": [
+      { "label": "Risk Factor" },
+      {
+        "label": "Optimize Portfolio",
+        "properties": [{ "name": "optimizer", "type": "string" }]
+      }
+    ]
+  }
+}

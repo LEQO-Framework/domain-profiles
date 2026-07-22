@@ -31,6 +31,21 @@ produces, including detection-engine gaps found along the way.
    `name`, `version`, `domainBlocks` grouped by category).
 2. Update `index.json` so the new domain/version is listed.
 
+## Validation
+
+`scripts/validate.py` checks that every `<domain>/<version>.json` matches the
+`DomainProfile` schema and that `index.json` is consistent with the files on
+disk (every listed version exists, every file is listed, `name`/`version`
+match the manifest, `latest` is the highest version). It uses only the Python
+standard library:
+
+```bash
+python scripts/validate.py
+```
+
+A GitHub Action (`.github/workflows/validate.yml`) runs this on every push and
+pull request, so a malformed profile or an out-of-sync manifest fails CI.
+
 ## Consuming this repository
 
 `index.json` is meant to let a client discover available domains and versions

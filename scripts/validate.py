@@ -36,6 +36,24 @@ def _is_str_list(value: object) -> bool:
     return isinstance(value, list) and all(isinstance(v, str) for v in value)
 
 
+def _is_valid_ports(value: object) -> bool:
+    """A port is either a bare string (defaults to a data-flow port) or an object
+    ``{"name": str, "flow"?: "data"|"control"}`` — mirrors the engine's PortSpec."""
+    if not isinstance(value, list):
+        return False
+    for port in value:
+        if isinstance(port, str):
+            continue
+        if (
+            isinstance(port, dict)
+            and isinstance(port.get("name"), str)
+            and port.get("flow", "data") in ("data", "control")
+        ):
+            continue
+        return False
+    return True
+
+
 def validate_block(where: str, block: object) -> None:
     if not isinstance(block, dict):
         err(f"{where}: block is not an object")
@@ -51,8 +69,8 @@ def validate_block(where: str, block: object) -> None:
         if not isinstance(con, dict) or not isinstance(con.get("propertyName"), str) or not isinstance(con.get("constraint"), str):
             err(f"{where}: constraint must have string 'propertyName' and 'constraint' ({con!r})")
 
-    if "ports" in block and not _is_str_list(block["ports"]):
-        err(f"{where}: 'ports' must be a list of strings")
+    if "ports" in block and not _is_valid_ports(block["ports"]):
+        err(f"{where}: 'ports' must be a list of strings or {{name, flow}} objects")
 
 
 def validate_profile(path: Path) -> dict | None:

@@ -2,6 +2,14 @@
   "name": "Finance",
   "version": "10.0.0",
   "domainBlocks": {
+    "structure": [
+      {
+        "label": "Strategy Group",
+        "description": "Container block that groups a strategy's building blocks.",
+        "container": true,
+        "allowedChildren": ["Budget", "Risk Factor"]
+      }
+    ],
     "boundary": [
       {
         "label": "Budget",

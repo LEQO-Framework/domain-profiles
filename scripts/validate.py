@@ -88,6 +88,9 @@ def validate_profile(path: Path) -> dict | None:
         err(f"{rel}: missing non-empty 'name'")
     if not isinstance(data.get("version"), str) or not data["version"]:
         err(f"{rel}: missing non-empty 'version'")
+    # Lifecycle state; absent means "active".
+    if data.get("status", "active") not in ("active", "deprecated"):
+        err(f"{rel}: 'status' must be 'active' or 'deprecated'")
 
     blocks = data.get("domainBlocks")
     if not isinstance(blocks, dict):

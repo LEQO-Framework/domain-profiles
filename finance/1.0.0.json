@@ -1,22 +1,40 @@
 {
   "name": "Finance",
   "version": "1.0.0",
+  "status": "deprecated",
   "domainBlocks": {
     "boundary": [
       {
         "label": "Budget",
-        "properties": [{ "name": "amount", "type": "float" }]
+        "properties": [
+          {
+            "name": "amount",
+            "type": "float"
+          }
+        ]
       },
       {
         "label": "Market Data",
-        "properties": [{ "name": "source", "type": "string" }]
+        "properties": [
+          {
+            "name": "source",
+            "type": "string"
+          }
+        ]
       }
     ],
     "operators": [
-      { "label": "Risk Factor" },
+      {
+        "label": "Risk Factor"
+      },
       {
         "label": "Optimize Portfolio",
-        "properties": [{ "name": "optimizer", "type": "string" }]
+        "properties": [
+          {
+            "name": "optimizer",
+            "type": "string"
+          }
+        ]
       }
     ]
   }

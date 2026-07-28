@@ -1,35 +1,83 @@
 {
   "name": "Finance",
   "version": "8.0.0",
+  "status": "deprecated",
   "domainBlocks": {
     "boundary": [
-      { "label": "Budget", "properties": [{ "name": "amount", "type": "float" }] }
+      {
+        "label": "Budget",
+        "properties": [
+          {
+            "name": "amount",
+            "type": "float"
+          }
+        ]
+      }
     ],
     "operators": [
       {
         "label": "Risk Factor",
         "properties": [
-          { "name": "threshold", "type": "int" },
-          { "name": "risk_model", "type": "risk-category" },
-          { "name": "manual_review", "type": "boolean" }
+          {
+            "name": "threshold",
+            "type": "int"
+          },
+          {
+            "name": "risk_model",
+            "type": "risk-category"
+          },
+          {
+            "name": "manual_review",
+            "type": "boolean"
+          }
         ],
         "constraints": [
-          { "propertyName": "threshold", "constraint": "required" },
-          { "propertyName": "threshold", "constraint": "min", "value": "100" },
-          { "propertyName": "threshold", "constraint": "max", "value": "1000" }
+          {
+            "propertyName": "threshold",
+            "constraint": "required"
+          },
+          {
+            "propertyName": "threshold",
+            "constraint": "min",
+            "value": "100"
+          },
+          {
+            "propertyName": "threshold",
+            "constraint": "max",
+            "value": "1000"
+          }
         ]
       },
       {
         "label": "Portfolio Optimizer",
         "properties": [
-          { "name": "optimizer", "type": "string" },
-          { "name": "max_iterations", "type": "int" },
-          { "name": "convergence_threshold", "type": "float" }
+          {
+            "name": "optimizer",
+            "type": "string"
+          },
+          {
+            "name": "max_iterations",
+            "type": "int"
+          },
+          {
+            "name": "convergence_threshold",
+            "type": "float"
+          }
         ],
         "constraints": [
-          { "propertyName": "optimizer", "constraint": "allowed_values", "value": "COBYLA,SPSA,ADAM" },
-          { "propertyName": "max_iterations", "constraint": "required" },
-          { "propertyName": "convergence_threshold", "constraint": "required" }
+          {
+            "propertyName": "optimizer",
+            "constraint": "allowed_values",
+            "value": "COBYLA,SPSA,ADAM"
+          },
+          {
+            "propertyName": "max_iterations",
+            "constraint": "required"
+          },
+          {
+            "propertyName": "convergence_threshold",
+            "constraint": "required"
+          }
         ]
       }
     ]

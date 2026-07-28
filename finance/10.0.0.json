@@ -1,56 +1,124 @@
 {
   "name": "Finance",
   "version": "10.0.0",
+  "status": "deprecated",
   "domainBlocks": {
     "structure": [
       {
         "label": "Strategy Group",
         "description": "Container block that groups a strategy's building blocks.",
         "container": true,
-        "allowedChildren": ["Budget", "Risk Factor"]
+        "allowedChildren": [
+          "Budget",
+          "Risk Factor"
+        ]
       }
     ],
     "boundary": [
       {
         "label": "Budget",
-        "properties": [{ "name": "amount", "type": "float" }],
-        "ports": [{ "name": "out", "flow": "data" }]
+        "properties": [
+          {
+            "name": "amount",
+            "type": "float"
+          }
+        ],
+        "ports": [
+          {
+            "name": "out",
+            "flow": "data"
+          }
+        ]
       }
     ],
     "operators": [
       {
         "label": "Risk Factor",
         "properties": [
-          { "name": "threshold", "type": "int" },
-          { "name": "risk_model", "type": "risk-category" },
-          { "name": "manual_review", "type": "boolean" }
+          {
+            "name": "threshold",
+            "type": "int"
+          },
+          {
+            "name": "risk_model",
+            "type": "risk-category"
+          },
+          {
+            "name": "manual_review",
+            "type": "boolean"
+          }
         ],
         "constraints": [
-          { "propertyName": "threshold", "constraint": "required" },
-          { "propertyName": "threshold", "constraint": "min", "value": "100" },
-          { "propertyName": "threshold", "constraint": "max", "value": "1000" }
+          {
+            "propertyName": "threshold",
+            "constraint": "required"
+          },
+          {
+            "propertyName": "threshold",
+            "constraint": "min",
+            "value": "100"
+          },
+          {
+            "propertyName": "threshold",
+            "constraint": "max",
+            "value": "1000"
+          }
         ],
         "ports": [
-          { "name": "in", "flow": "data" },
-          { "name": "trigger", "flow": "control" },
-          { "name": "out", "flow": "data" }
+          {
+            "name": "in",
+            "flow": "data"
+          },
+          {
+            "name": "trigger",
+            "flow": "control"
+          },
+          {
+            "name": "out",
+            "flow": "data"
+          }
         ]
       },
       {
         "label": "Portfolio Optimizer",
         "properties": [
-          { "name": "optimizer", "type": "string" },
-          { "name": "max_iterations", "type": "int" },
-          { "name": "convergence_threshold", "type": "float" }
+          {
+            "name": "optimizer",
+            "type": "string"
+          },
+          {
+            "name": "max_iterations",
+            "type": "int"
+          },
+          {
+            "name": "convergence_threshold",
+            "type": "float"
+          }
         ],
         "constraints": [
-          { "propertyName": "optimizer", "constraint": "allowed_values", "value": "COBYLA,SPSA,ADAM" },
-          { "propertyName": "max_iterations", "constraint": "required" },
-          { "propertyName": "convergence_threshold", "constraint": "required" }
+          {
+            "propertyName": "optimizer",
+            "constraint": "allowed_values",
+            "value": "COBYLA,SPSA,ADAM"
+          },
+          {
+            "propertyName": "max_iterations",
+            "constraint": "required"
+          },
+          {
+            "propertyName": "convergence_threshold",
+            "constraint": "required"
+          }
         ],
         "ports": [
-          { "name": "in", "flow": "control" },
-          { "name": "out", "flow": "data" }
+          {
+            "name": "in",
+            "flow": "control"
+          },
+          {
+            "name": "out",
+            "flow": "data"
+          }
         ]
       }
     ]

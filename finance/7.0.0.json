@@ -1,29 +1,67 @@
 {
   "name": "Finance",
   "version": "7.0.0",
+  "status": "deprecated",
   "domainBlocks": {
     "boundary": [
-      { "label": "Budget", "properties": [{ "name": "amount", "type": "float" }] }
+      {
+        "label": "Budget",
+        "properties": [
+          {
+            "name": "amount",
+            "type": "float"
+          }
+        ]
+      }
     ],
     "operators": [
       {
         "label": "Risk Factor",
         "properties": [
-          { "name": "threshold", "type": "int" },
-          { "name": "risk_model", "type": "string" },
-          { "name": "manual_review", "type": "boolean" }
+          {
+            "name": "threshold",
+            "type": "int"
+          },
+          {
+            "name": "risk_model",
+            "type": "string"
+          },
+          {
+            "name": "manual_review",
+            "type": "boolean"
+          }
         ],
         "constraints": [
-          { "propertyName": "threshold", "constraint": "required" },
-          { "propertyName": "threshold", "constraint": "min", "value": "100" },
-          { "propertyName": "threshold", "constraint": "max", "value": "1000" }
+          {
+            "propertyName": "threshold",
+            "constraint": "required"
+          },
+          {
+            "propertyName": "threshold",
+            "constraint": "min",
+            "value": "100"
+          },
+          {
+            "propertyName": "threshold",
+            "constraint": "max",
+            "value": "1000"
+          }
         ]
       },
       {
         "label": "Portfolio Optimizer",
-        "properties": [{ "name": "optimizer", "type": "string" }],
+        "properties": [
+          {
+            "name": "optimizer",
+            "type": "string"
+          }
+        ],
         "constraints": [
-          { "propertyName": "optimizer", "constraint": "allowed_values", "value": "COBYLA,SPSA,ADAM" }
+          {
+            "propertyName": "optimizer",
+            "constraint": "allowed_values",
+            "value": "COBYLA,SPSA,ADAM"
+          }
         ]
       }
     ]

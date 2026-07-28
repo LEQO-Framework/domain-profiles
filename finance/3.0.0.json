@@ -1,30 +1,61 @@
 {
   "name": "Finance",
   "version": "3.0.0",
+  "status": "deprecated",
   "domainBlocks": {
     "boundary": [
       {
         "label": "Budget",
-        "properties": [{ "name": "amount", "type": "int" }]
+        "properties": [
+          {
+            "name": "amount",
+            "type": "int"
+          }
+        ]
       }
     ],
     "operators": [
       {
         "label": "Risk Factor",
         "properties": [
-          { "name": "threshold", "type": "int" },
-          { "name": "risk_model", "type": "string" }
+          {
+            "name": "threshold",
+            "type": "int"
+          },
+          {
+            "name": "risk_model",
+            "type": "string"
+          }
         ],
         "constraints": [
-          { "propertyName": "threshold", "constraint": "required" },
-          { "propertyName": "threshold", "constraint": "min", "value": "0" },
-          { "propertyName": "threshold", "constraint": "max", "value": "1000" },
-          { "propertyName": "risk_model", "constraint": "required" }
+          {
+            "propertyName": "threshold",
+            "constraint": "required"
+          },
+          {
+            "propertyName": "threshold",
+            "constraint": "min",
+            "value": "0"
+          },
+          {
+            "propertyName": "threshold",
+            "constraint": "max",
+            "value": "1000"
+          },
+          {
+            "propertyName": "risk_model",
+            "constraint": "required"
+          }
         ]
       },
       {
         "label": "Optimize Portfolio",
-        "properties": [{ "name": "optimizer", "type": "string" }]
+        "properties": [
+          {
+            "name": "optimizer",
+            "type": "string"
+          }
+        ]
       }
     ]
   }

@@ -15,15 +15,17 @@ index.json          # manifest listing all domains and their available versions
 
 ## Domain
 
-Currently a single domain, **Finance**, evolved across eight revisions
-(`1.0.0` → `8.0.0`) rather than spread across many unrelated domains — each
-transition targets a different part of the conflict taxonomy (block removal,
-type narrowing/widening, required/optional properties, `min`/`max`
+Currently a single domain, **Finance**, evolved across eleven revisions
+(`1.0.0` → `11.0.0`) rather than spread across many unrelated domains. Each
+transition targets a different part of the conflict taxonomy: block removal,
+type narrowing and widening, required and optional properties, `min`/`max`
 constraints, constraint value changes and removals, block renames, custom
-types). See
-[`leqo-evolution-use-cases`](https://github.com/stceri/leqo-evolution-use-cases)
-for the corresponding models and the exact conflicts each transition
-produces, including detection-engine gaps found along the way.
+types, typed ports for data and control flow, and container blocks with a
+restricted set of admissible children.
+
+Revisions that have been superseded carry `"status": "deprecated"`. They stay
+readable and can still be migrated away from, but a client should not offer
+them for new models.
 
 ## Adding a domain or revision
 
@@ -48,16 +50,14 @@ pull request, so a malformed profile or an out-of-sync manifest fails CI.
 
 ## Consuming this repository
 
-`index.json` is meant to let a client discover available domains and versions
-without needing the GitHub API, then fetch the individual profile files
-directly (e.g. via raw.githubusercontent.com or a local clone).
+`index.json` lets a client discover the available domains and versions without
+the GitHub API, and the profile files are then fetched directly over plain
+HTTP, for example via raw.githubusercontent.com or from a local clone. No
+server-side component is required, any static file host works.
 
-**Status:** the LEQO modeler does not yet fetch profiles from this repository
-automatically — today, domain profiles are created/imported manually via the
-"Manage Domain Profiles" modal (`domainProfileModal.tsx`), which
-exports/imports a different, flatter JSON shape (`{ name, nodes }`). Wiring
-the modeler up to auto-load from here is a follow-up frontend task, not yet
-implemented.
+A client points at the raw base URL of this repository, reads `index.json`,
+and loads `<directory>/<version>.json` for the revisions it needs. In the LEQO
+low-code modeler this is configured through `VITE_DOMAIN_PROFILES_URL`.
 
 ## License
 

@@ -1,0 +1,79 @@
+{
+  "name": "Demo",
+  "version": "2.0.0",
+  "status": "active",
+  "domainBlocks": {
+    "boundary": [
+      {
+        "label": "Budget",
+        "properties": [
+          {
+            "name": "amount",
+            "type": "int"
+          }
+        ],
+        "ports": [
+          {
+            "name": "out",
+            "flow": "data"
+          }
+        ]
+      }
+    ],
+    "operators": [
+      {
+        "label": "Risk Factor",
+        "properties": [
+          {
+            "name": "threshold",
+            "type": "int"
+          }
+        ],
+        "constraints": [
+          {
+            "propertyName": "threshold",
+            "constraint": "min",
+            "value": "100"
+          },
+          {
+            "propertyName": "threshold",
+            "constraint": "max",
+            "value": "1000"
+          }
+        ],
+        "ports": [
+          {
+            "name": "in",
+            "flow": "data"
+          },
+          {
+            "name": "out",
+            "flow": "data"
+          }
+        ]
+      },
+      {
+        "label": "Portfolio Optimizer",
+        "properties": [
+          {
+            "name": "optimizer",
+            "type": "string"
+          }
+        ],
+        "constraints": [
+          {
+            "propertyName": "optimizer",
+            "constraint": "allowed_values",
+            "value": "COBYLA,SPSA,ADAM"
+          }
+        ],
+        "ports": [
+          {
+            "name": "in",
+            "flow": "data"
+          }
+        ]
+      }
+    ]
+  }
+}

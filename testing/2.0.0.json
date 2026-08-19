@@ -1,0 +1,53 @@
+{
+  "name": "Testing",
+  "version": "2.0.0",
+  "status": "deprecated",
+  "domainBlocks": {
+    "boundary": [
+      {
+        "label": "Budget Testing",
+        "properties": [
+          {
+            "name": "amount",
+            "type": "int"
+          },
+          {
+            "name": "note",
+            "type": "string"
+          }
+        ]
+      }
+    ],
+    "operators": [
+      {
+        "label": "Risk Factor Testing",
+        "properties": [
+          {
+            "name": "threshold",
+            "type": "int"
+          }
+        ],
+        "constraints": [
+          {
+            "propertyName": "threshold",
+            "constraint": "required"
+          },
+          {
+            "propertyName": "threshold",
+            "constraint": "min",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "label": "Optimize Portfolio Testing",
+        "properties": [
+          {
+            "name": "optimizer",
+            "type": "string"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -26,6 +26,15 @@
         "2.0.0"
       ],
       "latest": "2.0.0"
+    },
+    {
+      "name": "Testing",
+      "directory": "testing",
+      "versions": [
+        "1.0.0",
+        "2.0.0"
+      ],
+      "latest": "2.0.0"
     }
   ]
 }

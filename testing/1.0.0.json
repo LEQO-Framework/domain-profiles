@@ -1,0 +1,41 @@
+{
+  "name": "Testing",
+  "version": "1.0.0",
+  "status": "deprecated",
+  "domainBlocks": {
+    "boundary": [
+      {
+        "label": "Budget Testing",
+        "properties": [
+          {
+            "name": "amount",
+            "type": "float"
+          }
+        ]
+      },
+      {
+        "label": "Market Data Testing",
+        "properties": [
+          {
+            "name": "source",
+            "type": "string"
+          }
+        ]
+      }
+    ],
+    "operators": [
+      {
+        "label": "Risk Factor Testing"
+      },
+      {
+        "label": "Optimize Portfolio Testing",
+        "properties": [
+          {
+            "name": "optimizer",
+            "type": "string"
+          }
+        ]
+      }
+    ]
+  }
+}

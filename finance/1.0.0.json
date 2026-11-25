@@ -9,7 +9,7 @@
         "properties": [
           {
             "name": "amount",
-            "type": "float"
+            "type": "Number"
           }
         ]
       },

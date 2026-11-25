@@ -19,7 +19,7 @@
         "properties": [
           {
             "name": "amount",
-            "type": "float"
+            "type": "Number"
           }
         ],
         "ports": [
@@ -36,7 +36,7 @@
         "properties": [
           {
             "name": "threshold",
-            "type": "int",
+            "type": "Number",
             "required": true
           },
           {
@@ -84,12 +84,12 @@
           },
           {
             "name": "max_iterations",
-            "type": "int",
+            "type": "Number",
             "required": true
           },
           {
             "name": "convergence_threshold",
-            "type": "float",
+            "type": "Number",
             "required": true
           }
         ],

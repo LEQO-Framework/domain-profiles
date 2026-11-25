@@ -9,7 +9,7 @@
         "properties": [
           {
             "name": "amount",
-            "type": "int"
+            "type": "Number"
           },
           {
             "name": "note",
@@ -24,7 +24,7 @@
         "properties": [
           {
             "name": "threshold",
-            "type": "int",
+            "type": "Number",
             "required": true
           }
         ],

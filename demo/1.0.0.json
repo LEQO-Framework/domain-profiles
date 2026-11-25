@@ -9,7 +9,7 @@
         "properties": [
           {
             "name": "amount",
-            "type": "float"
+            "type": "Number"
           }
         ],
         "ports": [
@@ -26,7 +26,7 @@
         "properties": [
           {
             "name": "threshold",
-            "type": "int"
+            "type": "Number"
           },
           {
             "name": "legacy_note",

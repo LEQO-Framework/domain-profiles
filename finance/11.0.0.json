@@ -36,7 +36,8 @@
         "properties": [
           {
             "name": "threshold",
-            "type": "int"
+            "type": "int",
+            "required": true
           },
           {
             "name": "risk_model",
@@ -50,16 +51,12 @@
         "constraints": [
           {
             "propertyName": "threshold",
-            "constraint": "required"
-          },
-          {
-            "propertyName": "threshold",
-            "constraint": "min",
+            "constraint": ">=",
             "value": "100"
           },
           {
             "propertyName": "threshold",
-            "constraint": "max",
+            "constraint": "<=",
             "value": "1000"
           }
         ],
@@ -83,30 +80,17 @@
         "properties": [
           {
             "name": "optimizer",
-            "type": "string"
+            "type": "optimizer-algorithm"
           },
           {
             "name": "max_iterations",
-            "type": "int"
+            "type": "int",
+            "required": true
           },
           {
             "name": "convergence_threshold",
-            "type": "float"
-          }
-        ],
-        "constraints": [
-          {
-            "propertyName": "optimizer",
-            "constraint": "allowed_values",
-            "value": "COBYLA,SPSA,ADAM"
-          },
-          {
-            "propertyName": "max_iterations",
-            "constraint": "required"
-          },
-          {
-            "propertyName": "convergence_threshold",
-            "constraint": "required"
+            "type": "float",
+            "required": true
           }
         ],
         "ports": [
@@ -120,6 +104,13 @@
           }
         ]
       }
+    ]
+  },
+  "domainEnums": {
+    "optimizer-algorithm": [
+      "COBYLA",
+      "SPSA",
+      "ADAM"
     ]
   }
 }

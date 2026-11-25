@@ -49,14 +49,7 @@
         "properties": [
           {
             "name": "optimizer",
-            "type": "string"
-          }
-        ],
-        "constraints": [
-          {
-            "propertyName": "optimizer",
-            "constraint": "allowed_values",
-            "value": "COBYLA,SPSA,ADAM"
+            "type": "optimizer-algorithm"
           }
         ],
         "ports": [
@@ -66,6 +59,13 @@
           }
         ]
       }
+    ]
+  },
+  "domainEnums": {
+    "optimizer-algorithm": [
+      "COBYLA",
+      "SPSA",
+      "ADAM"
     ]
   }
 }

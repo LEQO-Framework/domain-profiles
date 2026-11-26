@@ -24,17 +24,14 @@
         "properties": [
           {
             "name": "threshold",
-            "type": "int"
+            "type": "int",
+            "required": true
           }
         ],
         "constraints": [
           {
             "propertyName": "threshold",
-            "constraint": "required"
-          },
-          {
-            "propertyName": "threshold",
-            "constraint": "min",
+            "constraint": ">=",
             "value": "0"
           }
         ]

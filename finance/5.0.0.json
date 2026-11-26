@@ -20,7 +20,8 @@
         "properties": [
           {
             "name": "threshold",
-            "type": "int"
+            "type": "int",
+            "required": true
           },
           {
             "name": "risk_model",
@@ -30,16 +31,12 @@
         "constraints": [
           {
             "propertyName": "threshold",
-            "constraint": "required"
-          },
-          {
-            "propertyName": "threshold",
-            "constraint": "min",
+            "constraint": ">=",
             "value": "100"
           },
           {
             "propertyName": "threshold",
-            "constraint": "max",
+            "constraint": "<=",
             "value": "1000"
           }
         ]
@@ -49,17 +46,17 @@
         "properties": [
           {
             "name": "optimizer",
-            "type": "string"
-          }
-        ],
-        "constraints": [
-          {
-            "propertyName": "optimizer",
-            "constraint": "allowed_values",
-            "value": "COBYLA,SPSA,ADAM"
+            "type": "optimizer-algorithm"
           }
         ]
       }
+    ]
+  },
+  "domainEnums": {
+    "optimizer-algorithm": [
+      "COBYLA",
+      "SPSA",
+      "ADAM"
     ]
   }
 }

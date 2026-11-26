@@ -20,31 +20,25 @@
         "properties": [
           {
             "name": "threshold",
-            "type": "int"
+            "type": "int",
+            "required": true
           },
           {
             "name": "risk_model",
-            "type": "string"
+            "type": "string",
+            "required": true
           }
         ],
         "constraints": [
           {
             "propertyName": "threshold",
-            "constraint": "required"
-          },
-          {
-            "propertyName": "threshold",
-            "constraint": "min",
+            "constraint": ">=",
             "value": "0"
           },
           {
             "propertyName": "threshold",
-            "constraint": "max",
+            "constraint": "<=",
             "value": "1000"
-          },
-          {
-            "propertyName": "risk_model",
-            "constraint": "required"
           }
         ]
       },
